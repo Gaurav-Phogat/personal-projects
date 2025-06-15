@@ -2,5 +2,9 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <div style={{border: '2px solid yellow',marginTop: '62px'}}>
+      <Component style={{border: '3px solid red'}} {...pageProps} />
+    </div>
+  )
 }

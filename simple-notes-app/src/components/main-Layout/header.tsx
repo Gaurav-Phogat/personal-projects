@@ -13,7 +13,7 @@ const Header = () => {
       component="div"
       position="absolute"
       width="100%"
-      height="max-content"
+      height='62px'
       display="flex"
       bgcolor={'grey'}
       flexDirection="row"
@@ -26,7 +26,7 @@ const Header = () => {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        gap: '0.5rem'
+        gap: '0.5rem',
       }}>
         <Link href="/login" passHref legacyBehavior>
           <Button variant="contained" component="a">Login</Button>
