@@ -1,10 +1,16 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
+import { initializeDatabase } from '../../lib/database';
+import Layout from "@/components/main-Layout";
+
+if (typeof window === 'undefined') {
+  initializeDatabase().catch(console.error);
+}
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div style={{border: '2px solid yellow',marginTop: '62px'}}>
-      <Component style={{border: '3px solid red'}} {...pageProps} />
-    </div>
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
   )
 }

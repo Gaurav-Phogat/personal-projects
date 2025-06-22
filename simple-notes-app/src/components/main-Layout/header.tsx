@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <Box
       component="div"
-      position="absolute"
+      position="fixed"
       width="100%"
       height='62px'
       display="flex"
@@ -19,6 +19,7 @@ const Header = () => {
       flexDirection="row"
       justifyContent="space-between"
       p={2}
+      sx={{border: '1px solid yellow'}}
     >
       <Link href="/" passHref><h2>Notes</h2></Link>
 
