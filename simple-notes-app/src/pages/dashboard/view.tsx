@@ -1,5 +1,6 @@
 import { Divider, Grid } from "@mui/material";
 import { useAppStore } from '@/store/useAppStore';
+import { editNote,createNote } from "@/API/notes";
 
 
 const sampleData = [
@@ -15,11 +16,14 @@ const Dashboard = () => {
 
   const { role, theme } = useAppStore();
 
+  console.log('check',createNote(1,'hello world','this is a test note'));
+
   return (
-    <Grid container spacing={5} sx={{ padding: { xs: 2, md: 4 },height: '100vh',width: '100vw',border: '1px solid red' }}>
+    <>
+    <Grid container spacing={2} sx={{ padding: { xs: 2, md: 4 },width: '100%' }}>
       {sampleData.map((item) => (
         // Remove 'container' - use only 'item' for grid items
-        <Grid height={200} width={200} size={{ xs: 12, md: 3,xl: 3 }} key={item.key}
+        <Grid size={{ xs: 12, md: 3,xl: 3 }} key={item.key}
               sx={{
               backgroundColor: "grey",
               padding: 2,
@@ -38,6 +42,7 @@ const Dashboard = () => {
         </Grid>
       ))}
     </Grid>
+    </>
   );
 };
 
